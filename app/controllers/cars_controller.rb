@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   def index
+    @cars = Car.all
   end
 
   def home
@@ -9,6 +10,7 @@ class CarsController < ApplicationController
   end
 
   def new
+    @car = Car.new
   end
 
   def create
