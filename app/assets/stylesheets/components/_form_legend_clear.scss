@@ -8,3 +8,17 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  color: rgb(0, 21, 35);
+  background-color: white;
+  border: 1px solid black;
+  &:hover {
+    background-color: rgb(0, 58, 97);
+    border: 1px solid white;
+  }
+}
