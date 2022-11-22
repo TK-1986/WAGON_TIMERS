@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[destroy show]
 
-  get "dashboard", to: "dashboard#dashboard"
+  get "dashboard", to: "users#dashboard"
 
   # Defines the root path route ("/")
   # root "articles#index"
