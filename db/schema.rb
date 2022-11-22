@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_142458) do
   create_table "cars", force: :cascade do |t|
     t.string "brand"
     t.string "modele"
-    t.integer "year"
+    t.date "year"
     t.integer "price"
     t.text "description"
     t.bigint "user_id", null: false
