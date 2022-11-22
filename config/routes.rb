@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "cars#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :cars do
-    resources :bookings, except: `i%w[destroy show]`
+    resources :bookings, except: %i[destroy show]
   end
   resources :bookings, only: %i[destroy show]
 
