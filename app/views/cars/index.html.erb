@@ -1,0 +1,11 @@
+<div class='container bg-white'>
+    <% @cars.each do |car| %>
+        <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+                <h2><%= car.brand %> <%= car.modele %></h2>
+                <p><%= car.description %></p>
+            </div>
+        </div> 
+    <% end %>
+</div>
