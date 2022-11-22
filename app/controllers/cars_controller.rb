@@ -2,14 +2,11 @@ class CarsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
   # before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :load_and_authorize_resource, if: :devise_controller?
+  # has_many :bookings
+  # belongs_to :user
 
   def index
     @cars = Car.all
-  end
-
-  def dashboard
-    @cars = Car.all
-    @cars = @cars.where(user_id: current_user.id)
   end
 
   def show
@@ -25,7 +22,7 @@ class CarsController < ApplicationController
     @car.user = current_user
     if @car.save!
       redirect_to cars_path
-      flash[:notice] = 'Votre annonce voiture a bien été créée'
+      flash[:notice] = "Votre annonce voiture a bien été créée"
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +32,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.update(car_params)
     redirect_to task_path(@car)
-    flash[:notice] = 'Votre annonce voiture a bien été modifiée'
+    flash[:notice] = "Votre annonce voiture a bien été modifiée"
   end
 
   def edit
@@ -50,7 +47,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.destroy
     redirect_to cars_path, status: :see_other
-    flash[:notice] = 'Votre annonce voiture a bien été supprimée'
+    flash[:notice] = "Votre annonce voiture a bien été supprimée"
   end
 
   private
@@ -58,5 +55,4 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:brand, :modele, :year, :price, :description)
   end
-
 end
