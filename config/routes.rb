@@ -2,13 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "cars#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # get "cars/search", to: "cars#search"
+  # post "cars/search", to: "cars#search"
   resources :cars do
-    resources :bookings, except: %i[destroy show]
+    resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[destroy show]
-
-  get "dashboard", to: "users#dashboard"
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :bookings, only: %i[index]
 end

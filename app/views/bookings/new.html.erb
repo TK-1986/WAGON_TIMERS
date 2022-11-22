@@ -1,0 +1,11 @@
+<div class = "container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <h2 class="text-center mb-5">Réservez votre Youngtimer ! 🚗</h2>
+      <%= simple_form_for @booking, :url => car_bookings_path do |f| %>
+        <%= f.input :reservation, label: "Date de début de location", placeholder: "2021-01-01" %>
+        <%= f.button :submit, "Réservez votre Youngtimer !", class: "btn btn-outline-primary col-12" %>
+      <% end %>
+    </div>
+  </div>
+</div>
