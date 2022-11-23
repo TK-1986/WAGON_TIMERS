@@ -8,6 +8,7 @@
         <%= f.input :year, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year - 17, discard_day: true, discard_month: true, label: 'Mise en circulation', placeholder: '1987' %>
         <%= f.input :price, label: 'Montant journalier de la location', placeholder: '165' %>
         <%= f.input :description, label: 'Décrivez votre véhicule', placeholder: "Racontez-nous la fabuleuse histoire de votre Youngtimer.." %>
+        <%= f.input :photo, as: :file %>
         <%= f.button :submit, "Mettez votre annonce en ligne !", class: "btn btn-outline-primary col-12 mt-3 mb-5" %>
       <% end %>
     </div>
