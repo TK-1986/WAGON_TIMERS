@@ -19,3 +19,7 @@ body {
 div.card {
   color : black;
 }
+
+body.d-flex.flex-column.h-100 {
+  background: linear-gradient(to bottom, rgb(0, 21, 35), rgb(8, 45, 71) 50%, rgb(77, 84, 89));
+ }
