@@ -1,5 +1,5 @@
 <div class='container bg-white'>
-    
+
     <% @cars.each do |car| %>
         <div class="card-product">
             <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
@@ -8,9 +8,7 @@
                 <p> <%= car.description %> </p>
                 <p> <%= car.price %>€ / Jour </p>
             </div>
-        </div> 
+        </div>
     <% end %>
-    
-</div>
 
-<%# car.photo.key %>
+</div>
