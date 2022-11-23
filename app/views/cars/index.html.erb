@@ -4,8 +4,9 @@
         <div class="card-product">
             <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
-                <h2><%= car.brand %> <%= car.modele %></h2>
-                <p><%= car.description %></p>
+                <h2> <%= car.brand %> <%= car.modele %></h2>
+                <p> <%= car.description %> </p>
+                <p> <%= car.price %>€ / Jour </p>
             </div>
         </div> 
     <% end %>
