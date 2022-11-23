@@ -75,8 +75,8 @@ class BookingsController < ApplicationController
 end
 
 
-rails d model booking
-rails db:drop
-rails db:create
-supprimer le fichier que tavais de lancien booking
-rails g model booking user:references car:references start_date:date end_date:date
+# rails d model booking
+# rails db:drop
+# rails db:create
+# supprimer le fichier que tavais de lancien booking
+# rails g model booking user:references car:references start_date:date end_date:date
