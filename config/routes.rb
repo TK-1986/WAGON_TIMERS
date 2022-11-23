@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get "cars/search", to: "cars#search"
   # post "cars/search", to: "cars#search"
   resources :cars do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[create]
   end
   resources :bookings, only: %i[index]
 end

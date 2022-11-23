@@ -8,11 +8,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def new
-    @booking = Booking.new(car_id: params[:car_id])
-    @booking.user = current_user
-  end
-
   def index
     @bookings = current_user.bookings
   end
@@ -23,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save!
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
       flash[:notice] = "Votre réservation a bien été créée"
     else
       render :new, status: :unprocessable_entity
@@ -71,10 +66,17 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:reservation, :car_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :car_id, :user_id)
   end
 
   def set_booking
     @booking = Booking.find(params[:id])
   end
 end
+
+
+rails d model booking
+rails db:drop
+rails db:create
+supprimer le fichier que tavais de lancien booking
+rails g model booking user:references car:references start_date:date end_date:date

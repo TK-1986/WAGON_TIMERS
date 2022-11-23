@@ -1,10 +1,38 @@
 <div class="container">
-    <div class="card mb-3">
-      <img class="card-img-top" src="https://picsum.photos/1179/300" alt="Card image cap">
+  <div class="card mt-3 mb-3">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1179/500" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1179/500" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1179/500" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="containter">
       <div class="card-body" style="display: flex;flex-direction: column;">
-        <h5 class="card-title">Lancia - djkfb (1972)</h5>
-        <p class="card-text">oirhze</p>
-        <button class="card-text">Réserver</button><p class="card-text"><small class="text-muted">Published on 23-11-2022</small></p>
+        <h5 class="card-title"> <%= @car.brand %> - <%= @car.modele %> <%= @car.year.strftime("%Y") %></h5>
+        <p class="card-text"><%= @car.description %></p>
+         <%= simple_form_for [@car, @booking] do |f| %>
+          <%= f.input :reservation, as: :date %>
+  
+          <%= f.button :submit %>
+         <% end %>
+        <p class="card-text mt-3"><small class="text-muted">Published on <%= @car.created_at.strftime(@car.created_at.strftime("%d"+"-"+"%m"+"-"+"%Y")) %></small></p>
+    </div>
       </div>
     </div>
+  </div>
 </div>
