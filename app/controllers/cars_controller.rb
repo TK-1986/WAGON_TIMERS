@@ -20,6 +20,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
+    # raise
     if @car.save!
       redirect_to cars_path
       flash[:notice] = "Votre annonce voiture a bien été créée"
@@ -53,6 +54,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :modele, :year, :price, :description)
+    params.require(:car).permit(:brand, :modele, :year, :price, :description, :photo)
   end
 end
