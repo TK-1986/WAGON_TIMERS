@@ -1,16 +1,24 @@
 <div class='container'>
-      <div class="card-body">
-          <% @cars.each do |car| %>
-            <%= link_to car_path(car) do %>
-              <div class="card-product">
-                  <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-                  <div class="card-product-infos">
-                      <h2> <%= car.brand %> <%= car.modele %></h2>
-                      <p> <%= car.description %> </p>
-                      <p> <%= car.price %>€ / Jour </p>
-                  </div>
-              </div>
-            <% end %>
-          <% end %>
-      </div>
+  <div class="card-body">
+    <%= form_with url: cars_path, method: :get, class: "d-flex col-12 col-md-6 col-lg-4 text-center",  :html => { style: "margin-left:auto; margin-right:auto"} do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control border-5 rounded-pill",
+      placeholder: "Trouvez votre Youngtimer"
+    %>
+    <%= submit_tag "🛣️", class: "btn btn-outline-primary rounded-pill fs-4" %>
+    <% end %>
+    <% @cars.each do |car| %>
+      <%= link_to car_path(car) do %>
+        <div class="card-product">
+          <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="card-product-infos">
+            <h2> <%= car.brand %> <%= car.modele %></h2>
+            <p> <%= car.description %> </p>
+            <p> <%= car.price %>€ / Jour </p>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
 </div>
