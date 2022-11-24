@@ -7,23 +7,3 @@
   flex-direction: column;
 }
 
-#wagontimers{
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 10%;
-  filter: saturate(0.5);
-  opacity: 80%;
-  width: 100%;
-  height: 100%;
-  // comment rogner mon image sur css : https://www.w3schools.com/cssref/css3_pr_object-fit.asp
-}
-
-div{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
