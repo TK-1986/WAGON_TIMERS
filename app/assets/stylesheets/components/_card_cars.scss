@@ -8,19 +8,19 @@
     margin-bottom: 15px;
     margin-top: 15px;
     width: 50%;
-    background: linear-gradient(to right, rgb(255, 255, 255), rgb(229, 231, 233) 50%, rgb(5, 25, 40));
+    background: linear-gradient(to right, #bcb9bc, rgb(229, 231, 233) 50%, rgb(5, 25, 40));
     transform : translate(45%, 0);
     border-radius: 10px;
   }
   
   .card-product img {
     height: 100%;
-    width: 120px;
+    width: 200px;
     object-fit: cover;
   }
   
   .card-product h2 {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     margin: 0;
     color: black;
@@ -29,7 +29,7 @@
   .card-product p {
     font-size: 18px;
     line-height: 1.4;
-    opacity: .7;
+    opacity: .8;
     margin-bottom: 0;
     margin-top: 8px;
     color: black;
