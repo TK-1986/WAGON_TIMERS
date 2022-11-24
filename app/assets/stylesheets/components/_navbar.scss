@@ -26,7 +26,7 @@
   border-radius: 20px;
   margin-right: 10px;
   border: 2px solid #FACF06;
-  width: 120px;
+  width: 150px;
   text-align: center;
   &:hover {
     color: #FACF06;
@@ -61,4 +61,10 @@
 
 .navbar-brand {
   padding: 0%;
+}
+
+#bookings-index {
+  color: #FACF06;
+  font-size: 12 px;
+  border-radius: 2 px #FACF06;
 }

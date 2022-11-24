@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand mt-1" do %>
+    <%= link_to root_path, class: "navbar-brand mt-1" do %>
       <%= image_tag "https://www.freepnglogos.com/uploads/zent-logo-png-car-22.png" %>
       <h2>Wagon Timers</h2>
     <% end %>
@@ -8,29 +8,29 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <%= link_to "Réserver", cars_path, class: "nav-link", id: "reserver-voiture" %>
+          <%= link_to "Voir les offres", cars_path, class: "nav-link", id: "reserver-voiture" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Louer", new_car_path, class: "nav-link", id: "create-offer" %>
+          <%= link_to "Louer ma voiture", new_car_path, class: "nav-link", id: "create-offer" %>
         </li>
+        
       </ul>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Accueil", root_path, class: "nav-link", id: "accueil" %>
+            <li class="nav-item">
+            <%= link_to "Mes réservations", bookings_path, class: "nav-link", id: "bookings-index" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link", id: "messages" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://www.programme-tv.net/imgre/fit/~2~providerPerson~6a2929ceaab23a90.jpeg/140x140/quality/80/alain-prost.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
