@@ -1,0 +1,19 @@
+<div class="container col-8">
+  <h1>Voici votre réservation :</h1>
+  <div class="row d-flex justify-content-center">
+    <div class="card col-5 mb-2 pt-2 rounded">
+      <%= cl_image_tag Car.find(@booking.car_id).photo.key, crop: :fill %>
+      <div class="card-body">
+        <h5 class="card-title"><%= Car.find(@booking.car_id).brand %> - <%= Car.find(@booking.car_id).modele %> (<%= Car.find(@booking.car_id).year.strftime("%Y") %>)</h5>
+        <p class="card-text"><%= Car.find(@booking.car_id).description %></p>
+        <p class="card-text">Prix : <%= Car.find(@booking.car_id).price %>€ / jour</p>
+      </div>
+      <div class="card-footer mb-2">
+        <small class="text-muted">Starting on : <%= @booking.start_date %> <br> Ending on : <%= @booking.end_date %></small>
+      </div>
+    </div>
+  </div>
+  <div class="btn bg-dark">
+  <%= link_to "Revenir à l'accueil", root_path, class: "nav-link", id: "reserver-voiture" %>
+  </div>
+</div>

@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save!
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path(@booking)
       flash[:notice] = "Votre réservation a bien été créée"
     else
       render :new, status: :unprocessable_entity
