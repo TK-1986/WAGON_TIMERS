@@ -21,7 +21,6 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
-    # raise
     if @car.save!
       redirect_to cars_path
       flash[:notice] = "Votre annonce voiture a bien été créée"
@@ -33,7 +32,7 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     @car.update(car_params)
-    redirect_to task_path(@car)
+    redirect_to cars_path(@car)
     flash[:notice] = "Votre annonce voiture a bien été modifiée"
   end
 
@@ -41,7 +40,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.user = current_user
     @car.save
-    redirect_to dashboard_path
+    redirect_to cars_path
     flash[:notice] = "Votre annonce voiture a bien été modifiée"
   end
 
