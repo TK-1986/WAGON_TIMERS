@@ -13,7 +13,14 @@
 
 body {
   color: white;
+  
+}
+
+.background {
   background: linear-gradient(to bottom, rgb(0, 21, 35), rgb(8, 45, 71) 50%, rgb(77, 84, 89));
+  background-size: cover;
+  min-height: 100vh!important;
+  width: 100vw;
 }
 
 div.card {
