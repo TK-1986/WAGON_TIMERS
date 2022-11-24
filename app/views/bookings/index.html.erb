@@ -1,13 +1,24 @@
-<% @bookings.each do |booking| %>
-  <%= link_to booking_path(booking) do %>
-    <div class="card mb-3">
-      <div class="card-header">
-        <%= booking.car.brand %> - <%= booking.car.modele %> (<%= booking.car.year.strftime("%Y") %>)
-      </div>
-      <div class="card-body">
-      <p class="card-text text-center">Propriétaire : <%= booking.car.user.first_name %> <%= booking.car.user.last_name %></p>
-      <p class="card-text text-center">Locataire : <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+<div class='card-deck'>
+  <div class="card-body">
+    <% @bookings.each do |booking| %>
+      <%= link_to booking_path(booking) do %>
+        <div class="card-product">
+          <%= cl_image_tag Car.find(booking.car_id).photo.key, crop: :fill %>
+          <div class="card-product-infos">
+            <h5 class="card-title">
+              <%= Car.find(booking.car_id).brand %> - <%= Car.find(booking.car_id).modele %> (<%= Car.find(booking.car_id).year.strftime("%Y") %>)
+            </h5>
+            <p class="card-text">
+              <%= Car.find(booking.car_id).description %>
+            </p>
+            <p class="card-text">Du <%= booking.start_date %> au <%= booking.end_date %> pour <%= Car.find(booking.car_id).price %>€ / jour</p>
+            Total : <%= (((booking.end_date - booking.start_date)+1)*Car.find(booking.car_id).price).floor %>€
+            <div class="btn" style="position: absolute; right: 0; bottom: 0; font-size: smaller; padding: 0; color: white; border: 1px solid white; background-color: red">
+              <%= link_to "🗑️", booking_path(booking), data: {turbo_method: :delete}, class: "nav-link", id: "supprimer" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
