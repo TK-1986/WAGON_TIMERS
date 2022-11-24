@@ -47,7 +47,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     flash[:notice] = "Votre réservation a bien été supprimée"
-    redirect_to new_car_booking_path(@booking)
+    redirect_to root_path
   end
 
   def reserved
