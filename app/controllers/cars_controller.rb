@@ -6,7 +6,15 @@ class CarsController < ApplicationController
   # belongs_to :user
 
   def index
-    @cars = Car.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        cars.brand @@ :query
+        OR cars.modele @@ :query
+      SQL
+      @cars = Car.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @cars = Car.all
+    end
   end
 
   def show
