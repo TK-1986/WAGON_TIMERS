@@ -4,6 +4,3 @@ class PagesController < ApplicationController
   def home
   end
 end
-
-
-#lancer migration depuis heroku : heroku run rails db:migrate

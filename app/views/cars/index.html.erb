@@ -1,14 +1,16 @@
-<div class='container bg-white'>
-
-    <% @cars.each do |car| %>
-        <div class="card-product">
-            <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-            <div class="card-product-infos">
-                <h2> <%= car.brand %> <%= car.modele %></h2>
-                <p> <%= car.description %> </p>
-                <p> <%= car.price %>€ / Jour </p>
-            </div>
-        </div>
-    <% end %>
-
+<div class='container'>
+      <div class="card-body">
+          <% @cars.each do |car| %>
+            <%= link_to car_path(car) do %>
+              <div class="card-product">
+                  <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+                  <div class="card-product-infos">
+                      <h2> <%= car.brand %> <%= car.modele %></h2>
+                      <p> <%= car.description %> </p>
+                      <p> <%= car.price %>€ / Jour </p>
+                  </div>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
 </div>
