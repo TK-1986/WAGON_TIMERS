@@ -1,10 +1,6 @@
-// accrocher le footer en bas de page en tapant la commande suivante:
 footer.text-center.text-white {
   display: sticky;
-  position: absolute;
   bottom: 0;
   width: 100%;
   opacity: 80%;
 }
-
-// diminer la taille du footer en tapant :
