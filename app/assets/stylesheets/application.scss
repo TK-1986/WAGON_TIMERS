@@ -13,7 +13,10 @@
 
 body {
   color: white;
-  
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .background {
