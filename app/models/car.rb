@@ -5,6 +5,8 @@ class Car < ApplicationRecord
 
   validates :brand, :year, :modele, :price, :description, presence: true
 
+  BRANDS = ["Volkswagen", "Peugeot", "Mazerati", "Lancia", "Honda", "Citroen", "Mercedes", "Alfa Roméo", "BMW"]
+
   include PgSearch::Model
   pg_search_scope :search_by_brand_and_modele,
     against: [:title, :synopsis],

@@ -4,7 +4,7 @@
       <div class="col-12 col-md-6 col-lg-4">
         <h2 class="text-center mb-5">Louez votre Youngtimer à d'autres passionnés ! 🚗</h2>
         <%= simple_form_for(@car) do |f| %>
-          <%= f.input :brand, label: 'Constructeur', placeholder: 'Lancia' %>
+          <%= f.input :brand, collection: Car::BRANDS %>
           <%= f.input :modele, label: 'Modèle', placeholder: 'Delta HF Intégrale' %>
           <%= f.input :year, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year - 17, discard_day: true, discard_month: true, label: 'Mise en circulation', placeholder: '1987' %>
           <%= f.input :price, label: 'Montant journalier de la location', placeholder: '165' %>
